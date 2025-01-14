@@ -1,5 +1,5 @@
 {
-  "name": "hooshid/imdb-scraper",
+  "name": "pooshgan/imdb-scraper",
   "description": "Library for retrieving movie, tv series information from imdb.com",
   "keywords": [
     "php",
