@@ -123,11 +123,7 @@ query advancedSearch{
 }
 EOF;
 
-        try {
-            $data = $this->graphql->query($query, "advancedSearch");
-        } catch (Exception $e) {
-            return $results;
-        }
+        $data = $this->graphql->query($query, "advancedSearch");
 
         foreach ($data->advancedTitleSearch->edges as $edge) {
             $imdbId = $edge->node->title->id ?? '';
