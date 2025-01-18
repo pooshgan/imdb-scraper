@@ -54,7 +54,7 @@ class GraphQL
             [
                 'operationName' => $queryName,
                 'query' => $query,
-                'variables' => $variables
+                'variables' => empty($variables) ? null : $variables
             ]
         );
 
@@ -68,7 +68,10 @@ class GraphQL
                 array('queryName' => $queryName, 'headers' => $request->getLastResponseHeaders(), 'body' => $request->getResponseBody())
             );
             */
-            $errorId = $variables['id'];
+            $errorId = 'Not Used';
+            if (!empty($variables['id'])) {
+                $errorId = $variables['id'];
+            }
             throw new Exception("Failed to retrieve query [$queryName] , IMDb id [$errorId]");
         }
     }
